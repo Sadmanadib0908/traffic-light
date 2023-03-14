@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic lights</title>
+    <style>
+        .lights {
+            display:flex;
+            justify-content: center;
+            gap: 20px;
+            
+        }
+
+        #red-light {
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            background-color: red;
+            opacity: 50%;
+            cursor: pointer;
+        }
+        #yellow-light {
+            border: 2px solid yellow;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            background-color: yellow;
+            opacity: 50%;
+            cursor: pointer;
+        }
+        #green-light {
+            border: 2px solid green;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            background-color: green;
+            opacity: 50%;
+            cursor: pointer;
+        }
+        #instruction{
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="lights">
+            <div id="red-light">
+
+            </div>
+            <div id="yellow-light">
+
+            </div>
+            <div id="green-light">
+
+            </div>
+        </div>
+        <h1 class="" id="instruction"></h1>
+    </main>
+<script>
+    const redLight = document.getElementById('red-light');
+    const yellowLight = document.getElementById('yellow-light');
+    const greenLight = document.getElementById('green-light');
+    redLight.addEventListener('click',function(){
+        redLight.style.opacity = '100%'
+        yellowLight.style.opacity = '50%'
+        greenLight.style.opacity = '50%'
+        document.getElementById('instruction').innerText = 'Stop'
+        document.getElementById('instruction').style.color = 'red'
+    })
+    yellowLight.addEventListener('click',function(){
+        redLight.style.opacity = '50%'
+        yellowLight.style.opacity = '100%'
+        greenLight.style.opacity = '50%'
+         document.getElementById('instruction').innerText = 'Ready'
+         document.getElementById('instruction').style.color = 'yellow'
+    })
+    greenLight.addEventListener('click',function(){
+        redLight.style.opacity = '50%'
+        yellowLight.style.opacity = '50%'
+        greenLight.style.opacity = '100%'
+         document.getElementById('instruction').innerText = 'Go'
+         document.getElementById('instruction').style.color = 'green'
+    })
+</script>
+</body>
+
+</html>
